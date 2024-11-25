@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  user_management:
+    build:
+      context: ./user_management
+    ports:
+      - "5000:5000"
+    networks:
+      - my_network
+
+  product_catalog:
+    build:
+      context: ./product_catalog
+    ports:
+      - "5001:5001"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
